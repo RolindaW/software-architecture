@@ -1,3 +1,30 @@
 site_name: Software Architecture
+site_url: !ENV SITE_URL
+site_description: Software architecture foundations.
+site_author: Rolinda W
+
+repo_url: https://github.com/RolindaW/software-architecture/
+edit_uri: 'blob/main/docs/'
+
+nav:
+  - Home: index.md
+  - Introduction: basics.md
+  - MVC:
+    - mvc/index.md
+    - MVC variantes: mvc/variants.md
+  - Layered: layered/ # TODO: fix - why not working?
+  - About: about.md
+
 theme:
   name: mkdocs
+  locale: en
+  color_mode: auto
+  user_color_mode_toggle: true
+  nav_style: primary
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  #- admonition
+
+copyright: Copyright &copy; 2025 <a href="https://github.com/RolindaW">Rolinda W</a>, Maintained by <a href="https://github.com/RolindaW">Rolinda W</a>.
