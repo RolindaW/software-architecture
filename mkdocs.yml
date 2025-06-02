@@ -6,13 +6,16 @@ site_author: Rolinda W
 repo_url: https://github.com/RolindaW/software-architecture/
 edit_uri: 'blob/main/docs/'
 
+# Warning! Subdirectory mapping into NAV section is not (nativelly) supported - pluggin required
 nav:
   - Home: index.md
   - Introduction: basics.md
   - MVC:
     - mvc/index.md
     - MVC variantes: mvc/variants.md
-  - Layered: layered/ # TODO: fix - why not working?
+  - Layered:
+    - Main: layered/README.md
+    - MVC variantSSS: layered/other.md
   - About: about.md
 
 theme:
@@ -25,6 +28,6 @@ theme:
 markdown_extensions:
   - toc:
       permalink: true
-  #- admonition
+  #- admonition - TODO: Enable when requried
 
 copyright: Copyright &copy; 2025 <a href="https://github.com/RolindaW">Rolinda W</a>, Maintained by <a href="https://github.com/RolindaW">Rolinda W</a>.
