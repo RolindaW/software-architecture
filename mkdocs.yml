@@ -1,4 +1,4 @@
-site_name: Software Architecture
+site_name: Software Architecture 101
 site_url: !ENV SITE_URL
 site_description: Software architecture foundations.
 site_author: Rolinda W
@@ -9,13 +9,7 @@ edit_uri: 'blob/main/docs/'
 # Warning! Subdirectory mapping into NAV section is not (nativelly) supported - pluggin required
 nav:
   - Home: index.md
-  - Introduction: basics.md
-  - MVC:
-    - mvc/index.md
-    - MVC variantes: mvc/variants.md
-  - Layered:
-    - Main: layered/README.md
-    - MVC variantSSS: layered/other.md
+  - Foundations: basics.md
   - About: about.md
 
 theme:

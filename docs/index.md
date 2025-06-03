@@ -1,17 +1,22 @@
-# Welcome to MkDocs
+# Welcome to Software Architecture 101
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Software architecture foundations, usefull tips, common patterns, and external resources.
 
-## Commands
+TODO: Complete introduction.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Patterns
 
-## Project layout
+* MVC (Model-View-Controller)
+  * MVVM (Model-View-ViewModel)
+* Layered
+* Onion
+* Hexagonal (Ports and Adapters)
+* Clean
+* Service-Oriented (SOA)
+  * Microservices
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+TODO: Add link to corresponding pages.
+
+## References
+
+Todas las citas de autores (book, guide, blogs (video, post), journal, magazine, paper) deberan ser referenciadas adecuadamente.
