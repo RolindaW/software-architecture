@@ -1,6 +1,6 @@
-site_name: Software Architecture 101
+site_name: !ENV [SITE_NAME, Friendly Software Architecture]
 site_url: !ENV SITE_URL
-site_description: Software architecture foundations.
+site_description: Software architecture described in an easy simple way.
 site_author: Rolinda W
 
 repo_url: https://github.com/RolindaW/software-architecture/
