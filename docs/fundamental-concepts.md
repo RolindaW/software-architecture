@@ -1,58 +1,35 @@
-# Fundamentals of Software Architecture
+# Fundamental concepts before choosing a software architecture
 
-## Control Flow and Dependency Order
+## What is software architecture
 
-Control Flow y Dependency Order son topics inherentes a todo Software System, independientemente de que se le haya aplicado un patron de arquiectura - y de cual sea - o no.
-Es importante entender estos conceptos, como se relacionan y como poder controlarlos - cuando se requira - en nuestro beneficio.
-Terminos relacionados: Caller y Calle (control flow); Coupling/Decoupling (dependency)
+Software architecture es estructura.
+Software architecture es organización de código (en módulos, componentes, servicios...) y la comunicación entre dichos elementos. Ambas son necesarias para poder hablar de arquitecura (es decir, por muy bien organizardo que tengas el codigo en modulos o componenetes, si el uso entre los mismos no es bueno - dependencias ciclicas, orden de dependendicas incorrecto - entonces no se estan siguienndo las buenas practicas minimas de arquitectura software).
 
-Las dependencias (Coupling) siempre van a estar presentes, la clave es entender como las podemos organizar para nuestro propio beneficio.
-Pricipalmente queremos proteger los elementos mas importantes (Policies - Abstract) - aquellos con menor tendencia a cambiar - de los menos importantes (Details - Concrete) - aquellos que son mas propensos a sufrir cambios.
-Importancia y frencuencia de cambio esta relacionado. ALgo importante (Business - Domain and Application , es decir, las reglas del juego) tendra menor tendencia a cambiar debido a su propia naturaleza; de la misma forma, algo menos importante (Persistance, UI, Network, es decir detalles de almacenamiento presentacion, comunicacion, herramientas, tecnologias, etc.) tendra mas tendencia a cambiar.
+En ocasiones se habla de arquitectura software o una falta de arquitectura en caso de que no se haya aplicado un patrón de arquitectura conocido o popular, como puede ser Clean Architecture, Hexagonal Architecture, Onion Architecture, Layered Architecture, etcétera. o cualquier variante/combicacion-hybrido de las mismas.
 
-## Caller and Calle
+En mi opinión, siempre hay una arquitectura, incluso aunque no se haya aplicado un patrón convencional o una variante de algún patrón convencional. El hecho de que hayas construido un sistema software de cualquier manera implica que se le haya aplicado cierta arquitectura, aunque esa arquitectura sea una falta de arquitectura en si misma (o algo que no presente unas buenas prácticas de arquitectura).
 
-En el control flow Caller sera la pieza de codigo (funcion, modulo, componente, servicio) que efectue la llamada y Calle sera quien es llamado.
-Esto, de primeras, es inpendendiente de quien sea la entidad mas o menos relevente
-El flujo de control siempre va marcado por quien llama a quien, y esta necesiad siempre va a existir
-Incluso puede ser codigo que llame a otro codigo en el mismo Scope - da lo mismo donde este el codigo - la clave es que siempre habra alguien llamando a otro alquien.
+## Benefits of software architecture
 
-## Contract Location
+Los beneficios de la arquitectura software, entre los más conocidos, pues podemos hablar de la legibilidad del código, el hecho de organizar el código permite que se pueda leer y entender mucho más fácilmente.
 
-Entonces la clave de todo esto esta en el contrato.
-Caller siempre depende del contrato - la clave esta en quien o donde se define dicho contrato
-En un uso nominal - donde una pieza de codigo Caller hace uso de otra Callee, el contrato lo define implicitamente el Callee.
-Asi, Caller, que depende explicitamente del Callee, dependera tambien explicitamente de dicho contrato.
+También favorece al desarrollo al romper el código o estructurarlo u organizarlo en diferentes partes claramente diferenciables. Dependiendo del tipo de enfoque que se le dé, esto podrá ser distinto. Permite que distintos equipos puedan trabajar de forma más cómoda.
 
-TODO: terminar - ver movil
+Otro beneficio interesante tiene que ver con las releases y el deployment. Si por ejemplo rompemos un sistema en diferentes componentes que se pueden realizar y se pueden poner a funcionar de forma independiente, hacemos que hacer cualquier tipo de build sea muy cómoda, entregar una nueva versión o parte de un sistema sea muy cómoda y que además también puedas hacer un deploy en hot, lo que se dice en caliente, mientras el sistema está corriendo y hacer una sustitución por un componente más actualizado con algún hotfix o lo que fuere.
 
-## SOLID
+Otro beneficio muy interesante de la arquitectura software es la escalabilidad, la posibilidad de que un sistema que a priori puede que no se haya pensado para que vaya a crecer mucho, pero puedes dejar abierta esa puerta y en el futuro poder extenderlo o poder ampliarlo. Dependiendo también de lo que te pueda interesar ampliar en tu caso. En algunos sistemas no interesará que el sistema pueda crecer de ninguna manera. En otros casos puede que el sistema tenga que crecer en el futuro o en un futuro más a corto plazo, pero en diferentes partes. Por ejemplo, en una arquitectura de servicios, es bastante lógico que vaya a incrementar el número de servicios que va a ofrecer el sistema. En una arquitectura que admita, que es una arquitectura que, por ejemplo, necesite que el código se modifique el comportamiento para ciertos clientes, pues más que crecer en servicios tendría que permitir que se pueda extender la funcionalidad, de forma que cambie según el cliente en el que está funcionando ese sistema.
 
-TODO: xplicar brevemente los principios
+Un punto muy curioso e importante a tener en cuenta es que no todas las arquitecturas proporcionan los mismos beneficios y tampoco en la misma medida. Un tipo de arquitectura puede ser muy buena, por ejemplo, para la escalabilidad y otra puede ser buena para escalabilidad, pero de otra forma o en otra magnitud. Por ejemplo, lo que hemos comentado antes: puede ser buena para escalar en el número de servicios que se puede ofrecer o de funcionalidades y otra puede ser mejor desde el punto de vista de cómo se va a poder extender una funcionalidad o funcionalidades existentes. Luego es importante tener en cuenta que no todas las arquitecturas ofrecen los mismos beneficios ni en la misma magnitud.
 
-## Platform: Lowest Dependency
+Y, por lo tanto, es importante conocer las distintas opciones de arquitectura que están a nuestra disposición para saber cómo debemos aplicar la que mejor se adapte a nuestras necesidades y al contexto, y no aplicar una arquitectura por aplicar sin ningún criterio.
 
-La dependencia de mas bajo nivel es la plataforma (hardware + OS - si es que lo hay) para la que se desarrollara el sistema software.
-Procesador, otros.
-PC, consolas, disposivitos moviles (tablet, smartphone), otros
-Windows, Linux, MacOs, Android, otros
-Device Independence: nunca escribir codigo dependiente de dispositivo - e.g. tecnologia disco - es importante tratar de abstraerse (en la medida de lo posible)
-Salvo en aquellos casos en que queramos desallorrar un sistema dedicado que exprima al maximo las caracteriistas del host machine.
-Hoy en dia el OS se encarga de toda abstraccion con respecto a la maquina fisica - disco, memoria, I/O (input devices, graphics, sound, network) - pero no todos los sistemas presentan un OS (e.g. MicroControllers, SoC/SoPC)
+## How to select the right architecture
 
-## Programming Language: Lowest Level Software Dependency
+Elegir una arquitectura software no es un proceso trivial, es necesario conocer una serie de requisitos o de características del proyecto en el que se va a trabajar antes de elegir la arquitectura que mejor se pueda adaptar. En estas características podríamos tener en cuenta, por ejemplo, la experiencia del equipo de desarrollo, algunos requisitos de cliente, herramientas y tecnologías que se vayan a elegir, plazos y presupuestos, etc.
 
-La dependencia de mas bajo nivel en todo sistema software es el lenguage de programacion seleccionado para la codificacion - mas alla de cualquier libreria, framework, runtime, otros...
-El lenuage de programacion determina la portabilidad del sistema
-Tambien determina la especialidad/dominio (e.g. para la web, salvo que utilicemos transpilacion para Angular (TypeScript), React (JS), Vue (Python), el lenguage de progrmacion JavaScript es el unico soportado por los navegadores)
-Tambien es posible tener en cuenta los recursos (librerias, frameworks) que existan a disposicion del dominio (e.g. para C++ windowing and context creation libraries, extension loading libraries, maths/algebra 3D graphics calculations)
-La eleccion del lenguage de programacion no es trivial
+Algunos profesionales recomiendan que la arquitectura no sea algo que haya que seleccionar en un principio y aferrarse a ella de forma muy estricta. Es posible que al principio del proyecto no sepamos muchas cosas y, por tanto, elegir una arquitectura de forma muy forzada sin tener en cuenta ciertas características del proyecto, sea o resulte en una mala decisión que nos perjudique en el futuro.
 
-## Common: Layers and Communication
-
-Todas los patrones de aruquitectura comparten una premisa comun: Separations of Concerns y COmmunicaton
-ALgunos lo hacen mediantes Layers, otros con Use Cases, otros son Hybrids
-La sefunda parte de la premisa es como es la comunicacion entre dichas capas: en que sentido fluye, si se permiten saltos - bypass o passthrough - (open) o no (closed), etc.
+Tambien, en algunas fases del desarrollo, es posible que la arquitectura vaya cambiando, tiene que ser flexible. No es que tenga que cambia dracticamente, quiza mas alguna pincelada aqui y alla.
 
 ## Desmitifying Software Architecture
 
@@ -60,6 +37,12 @@ Opiniones muy diferentes sobre lo que verdaderamente Software Architecture aport
 Algunos lo consideran parte critica de todo sistema software.
 Otros lo ven como algo menos relevante, quiza incluso en ocasiones sobrevalorado.
 Como es esto posible? Que haya opiniones de caracter tan opuesto en cuanto a un asunto que aparentemente puede marcar la diferencia entre el exito o fracaso de un sistema software.
+
+## Common: Layers and Communication
+
+Todas los patrones de aruquitectura comparten una premisa comun: Separations of Concerns y COmmunicaton
+ALgunos lo hacen mediantes Layers, otros con Use Cases, otros son Hybrids
+La sefunda parte de la premisa es como es la comunicacion entre dichas capas: en que sentido fluye, si se permiten saltos - bypass o passthrough - (open) o no (closed), etc.
 
 ## Three Layers: Presentation, Business, Persistance
 
