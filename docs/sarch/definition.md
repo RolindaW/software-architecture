@@ -78,9 +78,104 @@ The other extreme is no coordination at all.
 
 ## [Martin Fowler - Making Architecture Matter - Martin Fowler Keynote](https://www.youtube.com/watch?v=DngAZyWMGR0)
 
+Infamous architecture and architect
+
+00:35 I do not really like the term "Software Architect" because it summons these images of some senior person in an organization who is setting rules and standards of how software should be written but has not actually written any software for maybe 10 or 20 years.
+00:57 Joel Spolsky used the term "Architecture Astronauts". 
+01:01 Often cause a lot of problems for software projects.
+01:05 So the whole term "Architect" and "Architecture" has that kind of nasty taste to it.
+01:13 It is something that we need to change as industry because the way we write code is important.
+01:31 If you are going to be a technical person you have to be someone who is familiar and confortable with the act of programming.
+01:38 There has been for quite a while, in architecture particularly, this notion that architecture is kind of beyond programming and if you are an architect you should not be programming anymore.
+01:49 That is something that I have always thought is very wrong.
+> Arquitectura sugiere diferenciarse de la programacion. Figura de arquitecto tinte pomposo. Lo mismo que indica en la introduccion de "Software Architecture Guide".
+
+What is architecture?
+
+01:54 What really is architecture? What does even the word mean in a software context?
+02:02 Borrowing the term from buildings and construction, it actually means something completely different. 
+> Las analogias con la construccion y edificacion quiza no sean la mejor forma de tratar de definirlo.
+
+02:20 Kind of official definition. ANSI/IEEE Std 1471-2000: the fundamental organization of a system, embodied in its components, their relationships to each other and the environment, and the principles governing its design and evolution.
+02:28 That kind of definition has been around for a while.
+
+02:35 What architecture does mean. A reaction to a statement like that (the one given before)
+02:42 Ralph Johnson. Probably best known as one of the authors of the design patterns the gang of 4 book.
+03:12 He would sent an email once that was a reaction to that definition of architecture.
+03:16 I ended up stealing it completely on a column on architecture.
+> Ver "Who Needs an Architect".
+
+03:32 He basically took this definition and said...
+03:34 The problem with this definition is that it relies on this notion of somehow what are the highest level most critical important components.
+03:50 What does that mean? How do you select which components, what relationships, are important? There is a gazillion components and relationships in a product.
+04:00 What matters to make some of them architectural and some of them not?
+> El problema con la definicion oficial es el como es posible determinar que es lo importante.
+
+04:30 Ralph Johnson: Expert developers shared understanding of the system design.
+04:38 Architecture is much a social thing. It is that fuzzy embedded understanding that really matters.
+04:44 There may be diagrams here and there, there might be documents here and there and they may have architecture written on them but there are just a representation, and usually an imperfect representation, of that shared understanding.
+04:57 What you are trying to do with a software project, particularly as software projects grow, is you want to make sure you have a good shared understanding between the people who are leading the project. That is really what matters.
+> La arquitectura es el entendimiento compartido por los expertos de un sistema.
+
+05:16 Another definition that is also quite important: the set of design decisions that must be made early.
+05:30 Ralph Johnson: Really is what you wish you could get right early on.
+05:35 Because the point is, the decisions you might need to make early you do not have the information. You only learn about what the software product should be structured like as you are building it.
+> La arquitectura es las decisiones que quisieras poder tomar correctamente temprano.
+> No es posible realizarlas antes por falta de informacion. Se aprende a estructurar el proyecto software a medida que se construye.
+
+05:45 What it really boils down to is you concerned about "the decisions that are hard to change".
+05:55 A useful way of thinking about architecture "what is hard to change?".
+05:58 It does lead to some different thoughts about what are the main components and how do they fit together.
+06:06 The choice of programming language is a decision that is hard to change. But it is not usually considered what are the top level components.
+> La arquitectura es las decisiones dificiles de cambiar.
+> Lenguage de programacion (aunque no suele considerarse un componente de alto nivel).
+
+06:25 We have got to things here (shared understanding and hard to change) but they actually boild down to what in his view (Ralp Johnson) and in my view too is the definition of architecture: the important stuff, whatever that is.
+> Lo importante es lo importante, sea lo que sea.
+
+06:42 It sounds like an almost silly statement.
+06:46 But actually it is a very profound statement.
+06:50 If you are trying to think about your software system and what its architecture is, the first thing you have to do is to figure out what is important. What do we as the technical leadership of a project consider to be the most important things in there? Or even in a solo project, what is the key things about the system? What is the most important thing of the codebase that I have to keep at the top of my head when I am working on it? That decision about hat is important is really the key thing that goes on. And that is the thing that trumps in everything else.
+07:32 Martin Fowler: architecture (and I follow Ralph and I say) is the important stuff. Architecture is the important stuff, whatever that happens to be.
+> La arquitecture es lo importante.
+> Personalmente, no termino de entender esta propuesta.
+
+Why is architecture important?
+
+08:00 We need to put less effort on quality so we can build more features for our next release.
+08:08 We need to sort of do not worry so much about modularity in these design ideas, we got to crank out features.
+> Frecuentemente, la direccion sacrifica la arquitectura (calidad interna) para centrarse en entregar nueva funcionalidad a la mayor brevedad.
+
+08:18 The reaction of a lot of people to this is they get frustrated and they try to argue in terms of "we got to do a decent job as software professionals, we got to stand up to our professional standard"
+08:32 It is almost like taking a moral response: "software architecture is important for moral reasons. We need to do a good job. We need to be craftmans"
+> Los desarrolladores se frustran. Una especie de respuesta moral.
+> Tratar de discutir en terminos morales, de honrar su labor de artesania.
+
+08:45 Unfortunately, if taken that line you have lost.
+08:53 You are making a battle between craftmanship and economics, and economics always wins.
+> La batalla entre artesania y economia siempre estara dominada por esta ultima. No es una ruta viable.
+
+09:00 If you want to say why is architecture important you have to instead cast it in economic terms.
+09:06 The problem with this arguments is it got a notion of what is quality based on an idea that quality is something I can trade off for cost. A trade off on quality and cost.
+> Requiere argumentar la calidad en terminos economicos.
+> El problema es que esto suscita la idea de que la calidad puede intercambiarse por costo. Un compromiso directo calidad/coste que implique menor coste a expensas de menor calidad y, viceversa. Esto puede alentar a las figuras externas responsables del proyecto a sacrificar calidad en pos reducir costo.
+
+09:24 But quality in software means a whole bunch of different things.
+09:30 Some of these things can be seen by an external person (user, manager, customer), but some of them can not.
+09:40 Whether your software has a good architecture, or a good modular design or whatever, that is not something that is visible.
+09:50 Two forms of quality: external (visible to users and customers) and internal (not directly visible).
+09:55 Architecture is about internal quality.
 TODO
 
-Architecture is the important stuff, whatever that happens to be.
+10:27 What matters in terms of internal quality is more a long-term picture
+TODO
+
+
+
+
+
+
+
 
 ## [Martin Fowler - Who Needs an Architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf)
 
