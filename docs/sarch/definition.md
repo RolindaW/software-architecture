@@ -7,18 +7,17 @@ TODO: Resumir conclusiones puesta en comun de todos los articulos analizados.
 People in the software industry: "Hazily defined notion of the most important aspects of the internal design of a software system."
 > Concepcion general: los aspectos mas importantes del diseno interno de un sistema software. Pero... Cuales? No se especifica; vagamente definido.
 
-Side note: It often suggests a separation from programming and an unhealthy dose of pomposity.
-> Frecuentemente sugiere diferenciarse de la programacion. En ciertas empresas el rol de arquitecto software implica no programar. Es una mala practica, pues quien mejor para experimentar el impacto de las decisiones de diseno que quien las toma.
+It often suggests a separation from programming and an unhealthy dose of pomposity.
+> Frecuentemente sugiere separarse de la programacion. En ciertas empresas el rol de arquitecto software implica no programar. Es una mala practica, pues quien mejor para experimentar el impacto de las decisiones de diseno que quien las toma.
 > Tambien tinte pomposo, ostentoso. Con el fin de impresionar o llamar la atencion.
 > Todo esto, negativamente.
 
-Own thoughts: Good architecture supports its own evolution, and is deeply intertwined with programming.
+Good architecture supports its own evolution, and is deeply intertwined with programming.
 > Buena arquitetura soporta su propia evolucion.
 > Tambien estrechamente relacionada con la programacion.
 
 Good architecture is important. Why? Otherwise it becomes slower and more expensive to add new capabilities in the future.
 > Buena arquitectura es imporante. Agilizar y abaratar incluir nuevas funcionalidades en el futuro.
-> Interesante punto de vista de interes de negocio.
 
 What is architecture?
 
@@ -57,7 +56,7 @@ We can sacrifice quality for faster delivery in the short term (before the build
 People underestimate how quickly the cruft leads to an overall slower delivery. Attention to internal quality pays off in weeks not months.
 > Aun siendo posible secrificar calidad en pos de entregas mas rapidas a corto plazo, la falta de calidad interna pasa factura antes de lo previsto.
 > Resultado de abandonar la arquitectura durante la fase temprana de un proyecto. Por que? Priorizar resultados inmediatos en pos de contentar a clientes y usuarios. Requiere encontrar un balance (tradeoff) entre falta y exceso de arquitectura.
-> Mas en [Is High Quality Software Worth the Cost?](https://martinfowler.com/articles/is-quality-worth-cost.html)
+> Mas en [Martin Fowler - Is High Quality Software Worth the Cost?](https://martinfowler.com/articles/is-quality-worth-cost.html)
 
 Application Architecture & Entreprise Architecture
 
@@ -69,16 +68,23 @@ The key difference between this and enterprise architecture is that there is a s
 A common scale is that of an application, hence “application architecture”.
 There's no clear definition of what an application is.
 Martin Fowler: A social construction
-> Mas en [Application Boundary](https://martinfowler.com/bliki/ApplicationBoundary.html)
+> Mas en [Martin Fowler - Application Boundary](https://martinfowler.com/bliki/ApplicationBoundary.html)
 
 "Enterprise architecture" looks architecture across a large enterprise.
 Is about understanding what is worth the costs of central coordination, and what form that coordination should take.
 At one extreme is a central architecture group.
 The other extreme is no coordination at all.
 
+--- Summary ---
+
+1: Aspectos negativos nocion arquitectura/arquitecto. 1: Separacion?Distincion de la programacion. 2: Pomposidad.
+2: Definicion arquitectura.
+3: Importancia arquitectura.
+4: Diseno/Arquitectura aplica a distintos niveles.
+
 ## [Martin Fowler - Making Architecture Matter - Martin Fowler Keynote](https://www.youtube.com/watch?v=DngAZyWMGR0)
 
-Infamous architecture and architect
+Infamous software architecture/architect
 
 00:35 I do not really like the term "Software Architect" because it summons these images of some senior person in an organization who is setting rules and standards of how software should be written but has not actually written any software for maybe 10 or 20 years.
 00:57 Joel Spolsky used the term "Architecture Astronauts". 
@@ -88,7 +94,9 @@ Infamous architecture and architect
 01:31 If you are going to be a technical person you have to be someone who is familiar and confortable with the act of programming.
 01:38 There has been for quite a while, in architecture particularly, this notion that architecture is kind of beyond programming and if you are an architect you should not be programming anymore.
 01:49 That is something that I have always thought is very wrong.
-> Arquitectura sugiere diferenciarse de la programacion. Figura de arquitecto tinte pomposo. Lo mismo que indica en la introduccion de "Software Architecture Guide".
+> Figura de arquitecto tinte pomposo.
+> Arquitectura sugiere diferenciarse de la programacion.
+> Lo mismo que indica en la introduccion de "Software Architecture Guide".
 
 What is architecture?
 
@@ -103,7 +111,7 @@ What is architecture?
 02:42 Ralph Johnson. Probably best known as one of the authors of the design patterns the gang of 4 book.
 03:12 He would sent an email once that was a reaction to that definition of architecture.
 03:16 I ended up stealing it completely on a column on architecture.
-> Ver "Who Needs an Architect".
+> Ver [Martin Fowler - Who Needs an Architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf)
 
 03:32 He basically took this definition and said...
 03:34 The problem with this definition is that it relies on this notion of somehow what are the highest level most critical important components.
@@ -137,8 +145,12 @@ What is architecture?
 06:46 But actually it is a very profound statement.
 06:50 If you are trying to think about your software system and what its architecture is, the first thing you have to do is to figure out what is important. What do we as the technical leadership of a project consider to be the most important things in there? Or even in a solo project, what is the key things about the system? What is the most important thing of the codebase that I have to keep at the top of my head when I am working on it? That decision about hat is important is really the key thing that goes on. And that is the thing that trumps in everything else.
 07:32 Martin Fowler: architecture (and I follow Ralph and I say) is the important stuff. Architecture is the important stuff, whatever that happens to be.
-> La arquitecture es lo importante.
+> La arquitectura es lo importante.
 > Personalmente, no termino de entender esta propuesta.
+> Por una parte, los tiros podrian ir con que lo importante es un compendio de lo citado anteriormente (ese entendimiento que los expertos del sistema comparten, aquello que es dificil de cambiar, etc.).
+> Tambien, es cierto que el propio Ralph Johnson dice que "no hay forma objetiva de especificar que es lo importante", lo que da a entender que no es tanto que critique la definicion oficial, sino mas bien que ponga en evidencia que no es una definicion explicita porque no puede serlo.
+> En ese caso, podria entenderse como que la arquitectura es lo importante (lo fundamental, lo de alto nivel) y, por tanto, cuando se busca definir arquitectura en realidad se busca definir lo importante. Lo imporante es ese entendimiento que los expertos de un sistema comparten; lo importante son las decisiones acertadas que quisieras poder tomar en la etapa temprana de desarrollo de un sistema; lo importante es aquello dificil de cambiar. No da una definicion explicita de lo importante porque no es posible definirlo objetivamente; es especifico de cada sistema. Aunque entiendo que con ejemplos puntuales de distintos sistemas reales se podria dar una vision mas "amigable".
+> Por otra, lo veo como una forma de darse por vencido al no poder definir con exito eso mismo que reprocha no especificar a la definicion oficial: "lo importante".
 
 Why is architecture important?
 
@@ -148,34 +160,47 @@ Why is architecture important?
 
 08:18 The reaction of a lot of people to this is they get frustrated and they try to argue in terms of "we got to do a decent job as software professionals, we got to stand up to our professional standard"
 08:32 It is almost like taking a moral response: "software architecture is important for moral reasons. We need to do a good job. We need to be craftmans"
-> Los desarrolladores se frustran. Una especie de respuesta moral.
-> Tratar de discutir en terminos morales, de honrar su labor de artesania.
+> Los desarrolladores se frustran.
+> Se toma como una responsabilidad moral. Tratar de discutir la importancia de la calidad en terminos morales; de honrar la labor de artesania.
 
 08:45 Unfortunately, if taken that line you have lost.
 08:53 You are making a battle between craftmanship and economics, and economics always wins.
-> La batalla entre artesania y economia siempre estara dominada por esta ultima. No es una ruta viable.
+> Lamentablemente, la batalla entre artesania y economia siempre estara dominada por esta ultima.
+> No es una ruta viable.
 
 09:00 If you want to say why is architecture important you have to instead cast it in economic terms.
+> Argumentar la importancia de la calidad requiere hacerlo en terminos economicos.
+
 09:06 The problem with this arguments is it got a notion of what is quality based on an idea that quality is something I can trade off for cost. A trade off on quality and cost.
-> Requiere argumentar la calidad en terminos economicos.
-> El problema es que esto suscita la idea de que la calidad puede intercambiarse por costo. Un compromiso directo calidad/coste que implique menor coste a expensas de menor calidad y, viceversa. Esto puede alentar a las figuras externas responsables del proyecto a sacrificar calidad en pos reducir costo.
+> El problema es que esto suscita la idea de que la calidad puede intercambiarse por costo. Un compromiso directo calidad/coste que implique menor coste a expensas de menor calidad y, viceversa.
+> Esto puede alentar a las figuras externas responsables del proyecto a sacrificar calidad en pos reducir costo.
 
 09:24 But quality in software means a whole bunch of different things.
 09:30 Some of these things can be seen by an external person (user, manager, customer), but some of them can not.
 09:40 Whether your software has a good architecture, or a good modular design or whatever, that is not something that is visible.
 09:50 Two forms of quality: external (visible to users and customers) and internal (not directly visible).
 09:55 Architecture is about internal quality.
-TODO
+> En software la calidad tiene otros muchos significados. Distingue dos tipos de calidad.
+> Calidad externa: visible por managers, customer, users; experiencia de usuario, velocidad de entrega de funcionalidades y numero/tamano de bugs por entrega.
+> Calidad interna: no visible; arquitectura (modularidad, extensibilidad, desarrollabilidad, entregabilidad).
 
-10:27 What matters in terms of internal quality is more a long-term picture
-TODO
+10:27 What matters in terms of internal quality is more a long-term picture.
+10:40 Design Stamina Hypothesis (diagram).
+10:57 If you do not pay attention to design and architecture during the project you get a curve that as time goes on every time you want to add new features it seems to get harder and harder, because the existing codebase kind of slows you down as you add more stuff.
+11:27 If you have got a good architecture and you pay attention to keeping it healthy and refactoring regularly and making sure that the software codebase stays clean you can get a different experience where not just is that slowdown attenuated, you can even reverse it and feel that I can build new features faster and faster because the software is already nicely componentized so I just need to make a change here and there, it is easy to find where to make changes and I can accelerate. Because the existing codebase is a platform that I can build up and go faster.
+12:24 Because if I buy the cheaper product that has low internal quality I win at the moment, but the better internal quality software we will be able to make new features more and more rapidly, and soon the slower one can not keep up anymore.
+13:01 The degree of being able to respond to change becomes important.
+13:05 That is the economic reason why software architecture is important.
+13:09 If we do not keep good architecture, if we do not put that effort on internal quality, we are deceiving our customers, in fact stealing from our customers, because we are slowing down their ability to compete.
+13:24 That crossover line, where good design counts even in the short term, happens remarkably quickly. It is weeks not months.
+> No diseno/arquitectura: beneficio inmediato; incluir nueva funcionalidad se vuelve mas dificil con el tiempo (semanas, no meses; llega un momento en que no es posible seguir); merma capacidad de responder al cambio (ralentiza habilidad de competir en el mercado).
+> Buena arquitectura: capacidad de incluir nueva funcionalidad mas rapidamente; alta capacidad de responder al cambio (mayor competitivdad de mercado).
 
+--- Summary ---
 
-
-
-
-
-
+1: Aspectos negativos nocion arquitectura/arquitecto.
+2: Definicion arquitectura.
+3: Importancia arquitectura.
 
 ## [Martin Fowler - Who Needs an Architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf)
 
